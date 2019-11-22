@@ -1,0 +1,109 @@
+{% macro page(data) %}
+
+	<div class="header" id="header">
+		<picture>
+			<source media="(min-width: 768px)" srcset={{ data.header_img_desktop }}>
+			<img src={{ data.header_img_mobile }} alt={{ data.title }} class="header__image" />
+		</picture>
+
+		<a href="/" id="logo" class="header__logo">
+			<img src="/assets/images/mg_logo.svg" alt="Logo" width="328" height="144" />
+		</a>
+
+		<div class="header__container">
+			<h1>{{ data.title }}</h1>
+		</div>
+	</div>
+
+	<div id="content">
+
+		<div class="block block-about">
+			<div class="container">
+
+				{% include "parts/form.njk" %}
+
+				<div class="text-block">
+					<div class="text-block__title">{{ data.textblock_title }}</div>
+					<div class="text-block__text">{{ data.textblock_text | safe }}</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="block block-articles">
+			{% for article in data.articles %}
+				<div class="article article--{{ article.position }}">
+					<div class="article__img">
+						<img src={{ article.image }} alt={{ article.headline }}>
+					</div>
+					<div class="article__content">
+						<div class="article__header">
+							{{ article.headline }} 
+							<span class="highlight">{{ article.highlighted }}</span>
+						</div>
+						<div class="article__text">
+							{{ article.text | safe }}
+						</div>
+					</div>
+				</div>
+				
+			{% endfor %}
+
+		</div>
+
+
+
+		<div class="block block-requires container">
+
+			<div class="block-requires__title">
+				<span>
+					{% if data.requires_title %}
+						{{ data.requires_title }}
+					{% else %}
+						{{ data.title }}
+					{% endif %}
+				</span> requires me to
+			</div>
+
+			{% for require in data.requires %}
+				<div class="requires requires--{{ require.position }}">
+					<div class="requires__img"><img src={{ require.image }} alt=""></div>
+					<div class="requires__content">
+						<div class="requires__title">{{ require.title }}</div>
+						<div class="requires__text">{{ require.text }}</div>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+
+		<div class="block block-author">
+			<div class="author container">
+				<div class="author__photo">
+					<img src="/assets/images/Grecco.png" alt="Michael Grecco">
+				</div>
+				<div class="author__words">{{ data.author_words | safe }}</div>
+			</div>
+		</div>
+
+		{% include "parts/footer.njk" %}
+
+	</div>
+{% endmacro %}
+
+{% macro article(image_url, image_alt, header, content) %}
+<div class="article article--left">
+	<div class="article__img">
+		<img src="{{ image_url }}" alt="{{ image_alt }}">
+	</div>
+	<div class="article__content">
+		<div class="article__header">
+			{{ header | safe }}
+		</div>
+		<div class="article__text">
+			{{ content | safe }}
+		</div>
+	</div>
+</div>
+{% endmacro %}

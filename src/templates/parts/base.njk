@@ -1,0 +1,35 @@
+{% from "parts/macros.njk" import page %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	{% block title %}
+	<title>Michael Grecco Photographer</title>
+	{% endblock %}
+
+	{% block meta %}
+	{% endblock %}
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700&display=swap" rel="stylesheet">
+	<link href="/assets/css/main.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div id="wrapper">
+
+		{# {% include "parts/header.njk" %} #}
+
+		{% block content %}{% endblock %}
+
+		{# <div class="footer">
+			<div class="container">
+				<div class="copyrights">© 2019 Michael Grecco Photography. All Rights Reserved.</div>
+			</div>
+		</div> #}
+
+	</div>
+	
+</body>
+</html>

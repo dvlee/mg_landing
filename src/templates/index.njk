@@ -1,0 +1,42 @@
+{% extends "parts/base.njk" %}
+
+{% set page_title = "MichaelGrecco Landing Pages" %}
+
+{% block content %}
+<style>
+body {
+	text-align: center;
+}
+h1 {
+	font-size: 42px;
+	margin-bottom: 40px;
+	margin-top: 50px;
+}
+ul {
+	font-size: 24px;
+	line-height: 40px;
+}
+li {
+
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+a:hover {
+	text-decoration: underline;
+}
+</style>
+
+<h1>{{ page_title }}</h1>
+
+<ul>
+	<li><a target="_blank" href="/celebrity/">Celebrity</a></li>
+	<li><a target="_blank" href="/advertising/">Advertising</a></li>
+	<li><a target="_blank" href="/fineart/">FineArt</a></li>
+	<li><a target="_blank" href="/fashion/">Fashion</a></li>
+	<li><a target="_blank" href="/sports/">Sports</a></li>
+	<li><a target="_blank" href="/automotive/">Automotive</a></li>
+	<li><a target="_blank" href="/film/">Film</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% from "parts/var.njk" import data %}
+{% extends "parts/base.njk" %}
+
+{% set page_data = data.automotive %}
+{% set page_title = page_data.title %}
+
+{% block content %}
+	
+	{{ page(page_data) }}
+
+{% endblock %}
