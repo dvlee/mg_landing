@@ -71,7 +71,7 @@ em {
 .block-about {
 	margin-bottom: 60px;
 }
-.form {
+.wpcf7-form {
 	margin-top: -404px;
 	background-color: #000000;
 	border-radius: 0;
@@ -81,18 +81,18 @@ em {
 	margin-left: -20px;
 	margin-right: -20px;
 	z-index: 2;
-	&__text {
+	.form__text {
 		font-size: 26px;
 		line-height: 32px;
 		letter-spacing: 0.6px;
 		color: #ffffff;
 		margin-bottom: 38px;
 	}
-	&-group {
+	.form-group {
 		margin-bottom: 25px;
 		position: relative;
 	}
-	&-label {
+	.form-label {
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -131,7 +131,7 @@ em {
 		font-family: $font;
 	}
 
-	&-captcha {
+	.form-captcha {
 		img {
 			display: block;
 			width: 100%;
@@ -139,7 +139,7 @@ em {
 		}
 	}
 
-	&-submit {
+	.form-submit {
 		width: 100%;
 		height: 60px;
 		background-color: $themeColor;
@@ -167,7 +167,7 @@ em {
 		}
 	}
 
-	&-hint {
+	.form-hint {
 		color: #888888;
 		font-size: 16px;
 		line-height: 24px;
@@ -331,14 +331,14 @@ em {
 	}
 	
 	
-	.form {
+	.wpcf7-form {
 		border-radius: 10px;
 		padding: 42px 44px 40px;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 493px;
 		margin-bottom: 0;
-		&__text {
+		.form__text {
 			font-size: 30px;
 			line-height: 40px;
 		}
@@ -402,7 +402,7 @@ em {
 			width: 50%;
 		}
 	}
-	.form {
+	.wpcf7-form {
 		margin-top: -250px;
 	}
 	.article {
@@ -428,7 +428,7 @@ em {
 			font-size: 56px;
 		}
 	}
-	.form {
+	.wpcf7-form {
 		width: 50%;
 		float: right;
 		margin-top: -600px;
