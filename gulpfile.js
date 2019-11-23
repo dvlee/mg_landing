@@ -9,7 +9,9 @@ let gulp 			= require("gulp"),
     uglify          = require("gulp-uglify"),
     del 			= require("del"),
     browserify 		= require("gulp-browserify"),
-    nunjucks        = require("gulp-nunjucks-render");
+    nunjucks        = require("gulp-nunjucks-render"),
+    rename          = require("gulp-rename"),
+    cssmin          = require("gulp-cssmin");
 
 
 
@@ -37,6 +39,9 @@ gulp.task('sass', () => gulp.src('src/sass/*.scss')
             cascade: false
         }))
         // .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('build/assets/css/'))
+        .pipe(cssmin())
+        .pipe(rename({extname: '.min.css'}))
         .pipe(gulp.dest('build/assets/css/'))
 );
 
